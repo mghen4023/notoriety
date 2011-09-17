@@ -1,8 +1,8 @@
 <html> 
 <head> 
+<script src="http://platform.twitter.com/anywhere.js?id=ward0Wz6G6I7UlbSSeZiQ&v=1" type="text/javascript">
+</script>
 <script type="text/javascript"> 
-
-<!--dtet-->
 function sendResize()
 {
   var newWidth = document.getElementById('widthInput').value;
