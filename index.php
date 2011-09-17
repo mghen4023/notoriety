@@ -1,5 +1,9 @@
 <html> 
 <head> 
+<!-- 
+ edited by max at 1:00 AM on 9/17
+-->
+
 <script type="text/javascript"> 
 function sendResize()
 {
