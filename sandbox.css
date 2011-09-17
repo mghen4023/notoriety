@@ -3,29 +3,13 @@
 body {
 	text-align: center;
 	font-family:Arial;
+	background-color:black;
+	font-size:100%;
+	min-width:1200px;
 }
 
-#headerframe {
-	background-color: #999999; 
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px; 
-	text-color: #000000;
-	/*This centers the frame and gives some space after it*/
-	margin-left:auto;
-	margin-right:auto;
-	margin-bottom:5px;
-	width:70%;
-	padding: 5px;	
-}
 
 #mainframe {
-	background-color: #999999; 
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px; 
-	text-color: #000000;
-	/*This centers the frame and gives some space after it*/
 	margin-left:auto;
 	margin-right:auto;
 	margin-bottom:5px;
@@ -33,16 +17,106 @@ body {
 	padding: 5px;
 }
 
-#footerframe {
-	background-color: #999999; 
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px; 
-	text-color: #000000;
+
+
+
+div#menu
+{
+	display:block;
+	width:1100px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+div#menu ul
+{
+	list-style-type:none;
+	height: 45px;
+    vertical-align: middle;
+	display:table-cell;
+}
+
+div#menu li
+{
+	display:inline;
+	float:left;
+}
+
+div#menu li.menu-seperator
+{
+	color:white;
+	margin-top: .9em;
+}
+
+div#menu li.menu-item  a
+{
+	color:white;
+	font-family:"Times New Roman", Times, serif;
+	font-size:2em;
+	display:block;
+	width:200px;
+	text-align:center;
+	margin:3px;
+}
+
+div#menu li.menu-item  a.wide
+{
+	width:190px;
+}
+
+div#menu li.menu-item a:link, div#menu li.menu-item a:visited
+{
+	text-decoration:none;
+}
+
+div#menu li.menu-item a:hover
+
+{
+	background-color:#1a1a1a;
+	margin:0px;
+	border-style:outset;
+	border-width:3px;
+	border-color:#2a2a2a;
+}
+
+div#menu li.menu-item a:active
+{
+	font-weight:bold;
+	margin:0px;
+	border-style:inset;
+	border-width:3px;
+	border-color:#2a1a2a;
+}
+
+.spacer
+{
+	min-height:12px;
+}
+
+.line-separator
+{
+	height:1px;
+	background:#717171;
+	border-bottom:1px solid #313030;
+}
+
+.separator-space
+{
+	height:5px;
+}
+
+#display
+{
+	border-style: none;
+}
+
+#footer
+{
+	color:white;
+	font-weight: bold;
 	/*This centers the frame and gives some space after it*/
 	margin-left:auto;
 	margin-right:auto;
 	margin-bottom:5px;
-	width:70%;
 	padding: 5px;
 }
