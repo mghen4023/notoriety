@@ -3,6 +3,8 @@
 	<name>sandbox</name>
 	<comment></comment>
 	<projects>
+		<project>OAuth</project>
+		<project>Zoop</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
