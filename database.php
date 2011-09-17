@@ -1,9 +1,9 @@
 <?php
 
-define("DB_SERVER", "db383239122.db.1and1.com" );
-define("DB_USER", "dbo383239122");
-define("DB_PASS", "PennApps");
-define("DB_NAME", "db383239122");
+define("DB_SERVER", "psuacm.db.7988867.hostedresource.com" );
+define("DB_USER", "psuacm");
+define("DB_PASS", "TheNittany1855");
+define("DB_NAME", "psuacm");
 
 //MIKE GHEN
 // exxectue querys: $result = $database->query($sql);

@@ -70,7 +70,7 @@ $result_set = $database->fetch_array($result);
 
 //building sql
 $sql = "INSERT INTO users (name, screen_name, uid, rateLimit, city, country, value, currentCurrency, token, secret) VALUES  ";
-$sql.= "({$name},{$screen_name},{$id_str},{$remaining_hits},{$city},{$country},{100},{$result_set['code']},'x',{$_SESSION['TOKEN']},{$_SESSION['SECRET']})";
+$sql.= "({$name},{$screen_name},{$id_str},{$remaining_hits},{$city},{$country},100,{$result_set['code']},{$_SESSION['TOKEN']},{$_SESSION['SECRET']})";
 $result = $database->query($sql);
 //header('Location: http://www.sanguineshuriken.com/index.php');
 ?>
