@@ -1,6 +1,8 @@
 <html> 
 <head> 
 <script type="text/javascript"> 
+
+<!--dtet-->
 function sendResize()
 {
   var newWidth = document.getElementById('widthInput').value;
