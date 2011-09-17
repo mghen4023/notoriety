@@ -50,7 +50,6 @@
 			</ul>
 		</div>
 		
-		
 		<div class="line-separator"></div>
 		<div class="separator-space"></div>
 		<div class="line-separator"></div>
@@ -60,8 +59,6 @@
 		<iframe class="display" src="game.php" width="100%" height="480px" frameBorder="0">
 			<p>Your browser does not support iframes.</p>
 		</iframe>
-		
-		
 
 		<div id='footer'>
 				Copyright (c) 2011  PSU ACM 

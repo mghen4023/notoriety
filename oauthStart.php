@@ -23,5 +23,5 @@ echo '<br><hr>';
 
 $registerURL = $appTokenConnection->getAuthorizeURL($appTempCredentials, TRUE);
 
-echo '<a href="' . $registerURL . '">Auth with Twitter</a>';
+echo '<a href="' . $registerURL . '"> Authenticate through Twitter</a>';
 ?>

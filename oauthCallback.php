@@ -1,14 +1,11 @@
 <?php
 /*
  * This file gets the access token for the application and uses it to sign a buch of RESTful API requests.
+ * note: we _may_ not need to assign as many session variables here if we use the database.
  */
 include_once 'includes/twitteroauth.php';
 
 session_start();
-
-echo 'in callback with ' . 
-$_SESSION['application_oauth_token'] . ' and ' . 
-$_SESSION['application_oauth_token_secret'] . '<br><hr>';
 
 $credentialsConnection = new TwitterOAuth(
      'ward0Wz6G6I7UlbSSeZiQ', 
@@ -24,18 +21,16 @@ $requestConnection = new TwitterOAuth(
 $tokenCredentials['oauth_token'],
 $tokenCredentials['oauth_token_secret']);
 
-echo 'TOKEN: ' . $tokenCredentials['oauth_token'] . '<br/>'; 
-echo 'SECRET: ' . $tokenCredentials['oauth_token_secret'] . '<br/>';
+$_SESSION['TOKEN'] = $tokenCredentials['oauth_token'];
+$_SESSION['SECRET'] = $tokenCredentials['oauth_token_secret'];
 
 $content = $requestConnection->get('account/verify_credentials');
 if( isset( $content ) )
 {
-	echo 'NAME: ';
-	echo $content->name . '<br/>';
-	echo 'SCREEN NAME: ';
-	echo $content->screen_name . '<br/>';
-	echo 'ID STR: ';
-	echo $content->id_str . '<br/>';
+	//INSERT THIS INTO DATABASE
+	$content->name; 
+	$content->screen_name;
+	$content->id_str;
 	
 } else {
 	echo('an error occurred: content variable was not set');
@@ -45,9 +40,9 @@ if( isset( $content ) )
 $content = $requestConnection->get('account/rate_limit_status');
 if( isset( $content ) )
 {
-	echo 'RATE LIMIT (REMAINING HITS): ';
-	echo $content->remaining_hits . '<br />';
-
+	//INSERT THIS INTO DATABASE
+	$content->remaining_hits;  
+	
 } else {
 	echo('an error occurred: content variable was not set');
 	exit(1);
@@ -56,15 +51,17 @@ if( isset( $content ) )
 $content = $requestConnection->get('geo/search', array('ip' => $_SERVER['REMOTE_ADDR']) );
 if( isset( $content ) )
 {
-	echo 'COUNTRY CODE: ';
-	echo $content->result->places[0]->country_code . '<br />';
-	echo 'CITY: ';
-	echo $content->result->places[0]->full_name . '<br/>';
-
-
-} else {
+	//INSERT THIS INTO DATABASE
+	$content->result->places[0]->country_code;
+	$content->result->places[0]->full_name;
+	
+	} else {
 	echo('an error occurred: content variable was not set');
 	exit(1);
 }
 
+
+/* insert into database here so we can do xmlhttprequest from index */
+
+header('Location: http://www.sanguineshuriken.com/index.php');
 ?>
