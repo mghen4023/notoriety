@@ -13,6 +13,7 @@ function sendResize()
   document.getElementById('zoop').height = newHeight;
 }
 </script> 
+<link rel="stylesheet" type="text/css" href="sandbox.css" />
 </head> 
 <body> 
 
