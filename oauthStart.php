@@ -17,11 +17,12 @@ $appTempCredentials = $appTokenConnection->getRequestToken(
 $_SESSION['application_oauth_token'] = $appTempCredentials['oauth_token'];
 $_SESSION['application_oauth_token_secret'] = $appTempCredentials['oauth_token_secret'];
 
-echo '(DEBUG) app temp credentials are: ';
-print_r($appTempCredentials);
-echo '<br><hr>';
+//echo '(DEBUG) app temp credentials are: ';
+//print_r($appTempCredentials);
+//echo '<br><hr>';
 
 $registerURL = $appTokenConnection->getAuthorizeURL($appTempCredentials, TRUE);
 
-echo '<a href="' . $registerURL . '"> Authenticate through Twitter</a>';
-?>
+//echo '<a href="' . $registerURL . '"> Authenticate through Twitter</a>';
+header('Location: ' . $registerURL );
+?> 
