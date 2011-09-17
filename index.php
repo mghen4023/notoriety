@@ -1,5 +1,9 @@
 <html> 
 <head> 
+<!-- 
+ edited by max at 1:00 AM on 9/17
+-->
+
 <script type="text/javascript"> 
 
 <!--dtet-->
@@ -11,6 +15,7 @@ function sendResize()
   document.getElementById('zoop').height = newHeight;
 }
 </script> 
+<link rel="stylesheet" type="text/css" href="sandbox.css" />
 </head> 
 <body> 
 
