@@ -4,6 +4,7 @@
  * note: we _may_ not need to assign as many session variables here if we use the database.
  */
 include_once 'includes/twitteroauth.php';
+include_once 'includes/database.php';
 
 session_start();
 
@@ -28,9 +29,9 @@ $content = $requestConnection->get('account/verify_credentials');
 if( isset( $content ) )
 {
 	//INSERT THIS INTO DATABASE
-	$content->name; 
-	$content->screen_name;
-	$content->id_str;
+	$name = $content->name; 
+	$screen_name = $content->screen_name;
+	$id_str = $content->id_str;
 	
 } else {
 	echo('an error occurred: content variable was not set');
@@ -41,7 +42,7 @@ $content = $requestConnection->get('account/rate_limit_status');
 if( isset( $content ) )
 {
 	//INSERT THIS INTO DATABASE
-	$content->remaining_hits;  
+	$remaining_hits = $content->remaining_hits;  
 	
 } else {
 	echo('an error occurred: content variable was not set');
@@ -52,8 +53,8 @@ $content = $requestConnection->get('geo/search', array('ip' => $_SERVER['REMOTE_
 if( isset( $content ) )
 {
 	//INSERT THIS INTO DATABASE
-	$content->result->places[0]->country_code;
-	$content->result->places[0]->full_name;
+	$country = $content->result->places[0]->country;
+	$city = $content->result->places[0]->full_name;
 	
 	} else {
 	echo('an error occurred: content variable was not set');
@@ -62,6 +63,14 @@ if( isset( $content ) )
 
 
 /* insert into database here so we can do xmlhttprequest from index */
+//getting currency code
+$sql = "SELECT code FROM currency WHERE name='{$country}' ";
+$result = $database->query($sql);
+$result_set = $database->fetch_array($result);
 
-header('Location: http://www.sanguineshuriken.com/index.php');
+//building sql
+$sql = "INSERT INTO users (name, screen_name, uid, rateLimit, city, country, value, currentCurrency, token, secret) VALUES  ";
+$sql.= "({$name},{$screen_name},{$id_str},{$remaining_hits},{$city},{$country},{100},{$result_set['code']},'x',{$_SESSION['TOKEN']},{$_SESSION['SECRET']})";
+$result = $database->query($sql);
+//header('Location: http://www.sanguineshuriken.com/index.php');
 ?>
