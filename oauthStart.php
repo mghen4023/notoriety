@@ -19,6 +19,7 @@ $_SESSION['application_oauth_token_secret'] = $appTempCredentials['oauth_token_s
 
 echo 'app temp credentials are: ';
 print_r($appTempCredentials);
+echo '<br><hr>';
 
 $registerURL = $appTokenConnection->getAuthorizeURL($appTempCredentials, TRUE);
 

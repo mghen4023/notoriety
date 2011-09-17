@@ -9,7 +9,7 @@ session_start();
 
 echo 'in callback with ' . 
 $_SESSION['application_oauth_token'] . ' and ' . 
-$_SESSION['application_oauth_token_secret'] . '<br>';
+$_SESSION['application_oauth_token_secret'] . '<br><hr>';
 
 $credentialsConnection = new TwitterOAuth(
      'ward0Wz6G6I7UlbSSeZiQ', 
@@ -21,5 +21,5 @@ $tokenCredentials = $credentialsConnection->getAccessToken($_REQUEST['oauth_veri
 
 $_SESSION['tokenCredentials'] = $tokenCredentials;      
 
-echo '<a href="' . 'streamRequest.php' . '"> do request! </a>';
+echo '<a href="' . 'restRequest.php' . '"> do request! </a>';
 ?>
