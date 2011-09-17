@@ -2,7 +2,6 @@
 
 body {
 	text-align: center;
-	padding:10px;
 }
 
 #headerframe {
@@ -15,7 +14,8 @@ body {
 	/*This centers the frame*/
 	margin-left:auto;
 	margin-right:auto;
-	width:70%;	
+	width:70%;
+	padding: 10px;	
 }
 
 #mainframe {
@@ -29,6 +29,7 @@ body {
 	margin-left:auto;
 	margin-right:auto;
 	width:70%;	
+	padding: 10px;
 }
 
 #footerframe {
@@ -42,4 +43,5 @@ body {
 	margin-left:auto;
 	margin-right:auto;
 	width:70%;	
+	padding: 10px;
 }
